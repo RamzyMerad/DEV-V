@@ -69,3 +69,26 @@ app.delete('/', async (req, res) => {
   })
 })
 
+async function initialiseTables() {
+  await pg.schema.hasTable('animes').then(async (exists) => {
+    if (!exists) {
+      await pg.schema
+        .createTable('animes', (table) => {
+          table.increments();
+          table.string('title');
+          table.string('studio');
+          table.integer('episodes');
+          table.string('image');
+          table.timestamps(true, true);
+        })
+        .then(async () => {
+          
+        });
+    }else{
+      
+    }
+  });
+}
+initialiseTables()
+
+module.exports=app;
