@@ -1,0 +1,29 @@
+{
+  "name": "dev-v",
+  "version": "1.0.0",
+  "description": "DEV V Opdrachten Werkstuk",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamzyMerad/DEV-V.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamzyMerad/DEV-V/issues"
+  },
+  "homepage": "https://github.com/RamzyMerad/DEV-V#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.3.1",
+    "knex": "^0.95.14",
+    "nodemon": "^2.0.14",
+    "pg": "^8.7.1",
+    "supertest": "^6.1.6"
+  }
+}
