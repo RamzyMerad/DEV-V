@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "test": "jest ./src --maxWorkers=1 --coverage"
+    "test": "jest ./src"
   },
   "repository": {
     "type": "git",
