@@ -17,7 +17,7 @@ Image | The image of each anime.
 Created at | When it has been created.
 Updated at | When it has been updated.
 ## Example of an object
-{
+`{
   "id": 1,
     "title": "jujustu kaisen",
     "studio": "mappa",
@@ -26,6 +26,7 @@ Updated at | When it has been updated.
     "created_at": "2021-11-15T20:36:54.480Z",
     "updated_at": "2021-11-15T20:36:54.480Z"
 }
+`
 
 ## How to start?
 1.docker-compose up --build
