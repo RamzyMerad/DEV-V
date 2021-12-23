@@ -16,9 +16,11 @@ app.get("/get", async(req, res) => {
     res.send(data)
   })
 
+  
+
 })
 app.put("/update", async (req, res) => {
-  const {title: title, studio: studio, episodes: episodes, image: image} = req.body
+  const {title: title, studio: studio, episodes: episodes, image: image, genre: genre} = req.body
       await pg('animes')
       .where({title:title})
       .update({
@@ -32,10 +34,10 @@ app.put("/update", async (req, res) => {
 })
 
 app.post("/post",async(req,res)=>{
-  const {title: title, studio: studio, episodes: episodes, image: image} = req.body
+  const {title: title, studio: studio, episodes: episodes, image: image, genre: genre} = req.body
   if(title,  studio, episodes,  image){
 
-        await pg('animes').insert({title: title, studio: studio, episodes: episodes, image: image})
+        await pg('animes').insert({title: title, studio: studio, episodes: episodes, image: image, genre: genre})
         .then(data => {
           res.sendStatus(200);
         })
@@ -68,6 +70,7 @@ async function initialiseTables() {
           table.string('studio');
           table.integer('episodes');
           table.string('image');
+          table.string('genre');
           table.timestamps(true, true);
         })
         .then(async () => {
@@ -75,10 +78,24 @@ async function initialiseTables() {
         });
     }else{
       
-    }
+    }});
+    await pg.schema.hasTable('genre').then(async (exists) => {
+      if (!exists) {
+        await pg.schema
+          .createTable('genre', (table) => {
+            table.increments();
+            table.string('genre');
+            table.timestamps(true, true);
+          })
+          .then(async () => {
+            
+          });
+      }else{
+        
+      }
   });
 }
-initialiseTables()
+initialiseTables();
 
 app.listen(PORT, () => {
   console.log(`Server listening at ${PORT}`);
