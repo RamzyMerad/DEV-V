@@ -1,19 +1,22 @@
 const supertest = require('supertest')
- const app = require('./app');
+ const app = require('../app');
 
  const request = supertest(app);
 
 
- describe('GET /get', () => {
+ describe('GET /get/animes', () => {
   test('should responds with code 200',() => {
      try{
-    request.get('/get').expect(200) 
+    request.get('/get').expect(200);
      }catch(err){
 
      }
     
   });
 });
+
+
+
 
 describe('Put /update', () => {
   test('should expect an object', async() => {
