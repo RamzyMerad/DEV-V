@@ -29,6 +29,7 @@ Updated at | When it has been updated.
 }
 ```
 ##Usability 
+
 GET:
 - /Get/animes: Alle animes die aanwezig zijn in mijn Api
 - /Get/genres: alle genres van de animes aanwezig in de api
