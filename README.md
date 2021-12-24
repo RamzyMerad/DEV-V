@@ -28,6 +28,22 @@ Updated at | When it has been updated.
     "updated_at": "2021-11-15T20:36:54.480Z"
 }
 ```
+##Usability 
+GET:
+- /Get/animes: Alle animes die aanwezig zijn in mijn Api
+- /Get/genres: alle genres van de animes aanwezig in de api
+
+POST: 
+- /Post/animes: animes worden opgeslagen volgens structuur van object
+- /Post/genres: Genre(=string) wordt opgeslagen in de genre api
+
+PUT:
+- Update/animes: animes worden gewijzigd volgens id en is realtime opgeslagen
+- Update/genres: id van genre wordt behouden en modificatie worden gemaakt op de orginele genre
+
+DELETE:
+- /Delete/animes: id van anime wordt gedelete met animes infos
+- Delete/genres: verwijder alle genres aanwezig in het tabel
 
 ## How to start?
 1.docker-compose up --build
